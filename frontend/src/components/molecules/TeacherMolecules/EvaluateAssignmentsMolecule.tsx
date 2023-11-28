@@ -32,7 +32,7 @@ type FormData = {
     assignmentScore?: number;
 };
 
-const EvaluateAssignmentsMolecule = (props: Props) => {
+const EvaluateAssignmentsMolecule = () => {
     const { getAssignmentEvaluation, evaluateAssignment } = useCourse();
 
     const state = useSelector((state: any) => state.user);

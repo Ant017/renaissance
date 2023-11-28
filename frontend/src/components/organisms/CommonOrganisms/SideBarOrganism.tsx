@@ -80,32 +80,32 @@ const SideBarOrganism = (props: Props) => {
         return (
             <div className='flex pt-10 px-10 gap-20'>
                 <div className='flex flex-col gap-3 w-[18rem] p-7 rounded-lg h-[60vh] shadow-md sticky top-[100px]'>
-                    <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
+                    {/* <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
                         onClick={() => handleTabClick(1)}>
                         <LuLayoutDashboard className='font-bold text-xl' />
                         Dashboard
                     </div>
-                    <hr className='w-40'></hr>
-                    <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
-                        onClick={() => handleTabClick(2)}>
+                    <hr className='w-40'></hr> */}
+                    {/* <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
+                        onClick={() => handleTabClick(1)}>
                         <IoAnalyticsOutline className='font-bold text-xl' />
                         Analytics
-                    </div>
-                    <hr className='w-40'></hr>
+                    </div> */}
+                    {/* <hr className='w-40'></hr> */}
                     <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
-                        onClick={() => handleTabClick(3)}>
+                        onClick={() => handleTabClick(1)}>
                         <PiStudent className='font-bold text-xl' />
                         Student Requests
                     </div>
                     <hr className='w-40'></hr>
                     <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
-                        onClick={() => handleTabClick(4)}>
+                        onClick={() => handleTabClick(2)}>
                         <LiaChalkboardTeacherSolid className='font-bold text-xl' />
                         Teacher Requests
                     </div>
                     <hr className='w-40'></hr>
                     <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
-                        onClick={() => handleTabClick(5)}>
+                        onClick={() => handleTabClick(3)}>
                         <BsBookmarkCheck className='font-bold text-xl' />
                         Course Requests
                     </div>
@@ -117,19 +117,19 @@ const SideBarOrganism = (props: Props) => {
                 </div>
 
                 <div className='flex flex-col w-full'>
-                    {activeTab === 1 && <div>
+                    {/* {activeTab === 1 && <div>
                         <AdminDashboardMolecule />
-                    </div>}
-                    {activeTab === 2 && <div>
+                    </div>} */}
+                    {/* {activeTab === 1 && <div>
                         <AdminAnalyticsMolecule />
-                    </div>}
-                    {activeTab === 3 && <div>
+                    </div>} */}
+                    {activeTab === 1 && <div>
                         <AdminSubscriptionRequestsMolecule />
                     </div>}
-                    {activeTab === 4 && <div>
+                    {activeTab === 2 && <div>
                         <AdminTeacherRequestsMolecule />
                     </div>}
-                    {activeTab === 5 && <div>
+                    {activeTab === 3 && <div>
                         <AdminCourseApprovalRequestsMolecule />
                     </div>}
                 </div>
@@ -193,32 +193,32 @@ const SideBarOrganism = (props: Props) => {
         return (
             <div className='flex pt-10 px-10 gap-20'>
                 <div className='flex flex-col gap-3 w-[19rem] p-7 rounded-lg h-[60vh] shadow-md sticky top-[100px]'>
-                    <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
+                    {/* <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
                         onClick={() => handleTabClick(1)}>
                         <LuLayoutDashboard className='font-bold text-xl' />
                         Dashboard
                     </div>
-                    <hr className='w-40'></hr>
+                    <hr className='w-40'></hr> */}
                     <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
-                        onClick={() => handleTabClick(2)}>
+                        onClick={() => handleTabClick(1)}>
                         <LuPaperclip className='font-bold text-xl' />
                         Enrolled Courses
                     </div>
                     <hr className='w-40'></hr>
                     <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
-                        onClick={() => handleTabClick(3)}>
+                        onClick={() => handleTabClick(2)}>
                         <IoMdCheckmarkCircleOutline className='font-bold text-xl' />
                         Completed Courses
                     </div>
                     <hr className='w-40'></hr>
                     <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
-                        onClick={() => handleTabClick(4)}>
+                        onClick={() => handleTabClick(3)}>
                         <MdOutlineShoppingCart className='font-bold text-xl' />
                         My Cart
                     </div>
                     <hr className='w-40'></hr>
                     <div className='flex gap-2 flex-wrap cursor-pointer hover:scale-105'
-                        onClick={() => handleTabClick(5)}>
+                        onClick={() => handleTabClick(4)}>
                         <HiOutlineHeart className='font-bold text-xl' />
                         My Wish-list
                     </div>
@@ -230,19 +230,19 @@ const SideBarOrganism = (props: Props) => {
                 </div>
 
                 <div className='flex flex-col justify-center items-center w-full'>
-                    {activeTab === 1 && <div>
+                    {/* {activeTab === 1 && <div>
                         <StudentDashboardMolecule />
-                    </div>}
-                    {activeTab === 2 && <div>
+                    </div>} */}
+                    {activeTab === 1 && <div>
                         <StudentEnrolledCoursesMolecule />
                     </div>}
-                    {activeTab === 3 && <div>
+                    {activeTab === 2 && <div>
                         <StudentCompletedCoursesMolecule />
                     </div>}
-                    {activeTab === 4 && <div>
+                    {activeTab === 3 && <div>
                         <StudentCartMolecule />
                     </div>}
-                    {activeTab === 5 && <div>
+                    {activeTab === 4 && <div>
                         <StudentWishListMolecule />
                     </div>}
                 </div>

@@ -8,7 +8,7 @@ const OverviewMolecule = (props: Props) => {
   const singleCourse = location.state?.singleCourse;
 
   return (
-    <div className='flex flex-col px-10'>
+    <div className='flex flex-col px-10 mb-9'>
       <div className='shadow-lg rounded-lg p-5'>
         <h1 className='text-3xl font-bold mb-4'>Overview</h1>
         <p className='text-gray-700 mb-6'>{singleCourse?.description}</p>

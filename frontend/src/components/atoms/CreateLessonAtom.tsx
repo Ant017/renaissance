@@ -117,7 +117,7 @@ const CreateLessonAtom = ({ onLessonRemove, onLessonIdChange }: Props) => {
     return (
         <div className='flex flex-col gap-2 items-center shadow-lg w-[800px] rounded p-3 mx-auto'>
             <FaMinus onClick={onLessonRemove}
-                className="bg-red-500 text-white rounded-full p-3 w-9 h-9 cursor-pointer" />
+                className="bg-red-500 text-white rounded- p-1 w-5 h-5 cursor-pointer" />Remove this lesson
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='flex flex-col w-[700px]'>
                     <label>Title</label>

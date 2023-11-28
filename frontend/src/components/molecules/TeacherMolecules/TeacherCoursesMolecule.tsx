@@ -112,7 +112,7 @@ const TeacherCoursesMolecule = () => {
                             await publishCourse({courseID: course._id}, checkString);
                             await getTeachersCourse(checkString)
                           }}>
-                          <MdPublishedWithChanges size={24} className="text-white" />
+                          <MdPublishedWithChanges size={24} className="text-white cursor-pointer" />
                           <p className="ml-2 text-white">Publish</p>
                         </div>
                       ) : null}

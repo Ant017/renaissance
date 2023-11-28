@@ -7,8 +7,9 @@ type BoxProps = {
 const LogoNavMolecule = ({ className }: BoxProps) => {
     return (
         <div>
-            <div>
-                <Link className='link' to="/"><img className='h-16 w-16' src='/logo.png'></img></Link>
+            <div className='flex items-center text-3xl font-semibold font-mono'>
+                <Link className='link' to="/"><img className='h-14 w-14' src='/programming.png'></img></Link>
+                Renaissance
             </div>
         </div>
     )

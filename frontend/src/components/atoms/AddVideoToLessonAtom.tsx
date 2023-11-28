@@ -130,24 +130,27 @@ const AddVideoToLessonAtom = ({ lessonID, onRemove }: LessonID) => {
                     {errors.videoTitle && <h5 className="text-red-500">{String(errors.videoTitle.message)}</h5>}
                 </div>
 
-                <div className='flex items-center gap-2 text-xl'>Add Video
+                {/* <div className='flex items-center gap-2 text-xl'>Add Video
                     <IoCloudUpload />
-                </div>
+                </div> */}
 
-                <div {...getRootProps()}>
-                    <input {...getInputProps()} />
-                    {
-                        isDragActive ?
-                            <p>Drop the files here ...</p> :
-                            <p>Drag 'n' drop some files here, or click to select files</p>
-                    }
+                <div className='flex flex-col gap-2 items-center justify-center mt-4 border mb-4'>
+                    <label className='font-semibold'>Add Video</label>
+                    <div {...getRootProps()}  className='flex items-center justify-center'>
+                        <input {...getInputProps()} />
+                        {
+                            isDragActive ?
+                                <p>Drop the files here ...</p> :
+                                <IoCloudUpload className='text-gray-500 h-10 w-10 cursor-pointer' />
+                        }
+                    </div>
                 </div>
                 <div
                     onClick={async () => {
                         await setVideoLink(recordedFiles)
                         openModal();
                     }}
-                    className='text-lg text-blue-500 font-semibold cursor-pointer'>
+                    className='text-lg text-blue-500 font-semibold cursor-pointer text-center'>
                     Or record a video
                 </div>
                 <Modal

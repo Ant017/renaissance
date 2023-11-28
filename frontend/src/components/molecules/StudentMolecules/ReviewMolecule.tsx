@@ -86,11 +86,11 @@ const ReviewMolecule = () => {
     try {
       if (myReview?._id) {
         await deleteReview(myReview._id, checkString);
-
+  
         // Remove the deleted review from the state
-        const updatedOtherReviews = otherReviews.filter((review) => review._id !== myReview._id);
+        const updatedOtherReviews = otherReviews.filter((review) => review.userID._id !== myReview.userID._id);
         setOtherReviews(updatedOtherReviews);
-
+  
         // Set the user's review to null since it's deleted
         setMyReview(null);
       } else {
@@ -100,6 +100,7 @@ const ReviewMolecule = () => {
       console.error('Error deleting review:', error);
     }
   };
+  
 
   return (
     <div className='flex flex-col px-10 py-4'>
@@ -132,7 +133,7 @@ const ReviewMolecule = () => {
               <p className='ml-8 text-gray-800'>{myReview?.text}</p>
             </div>
             <div className='flex gap-5 items-end mr-5'>
-              <BiSolidEdit size={24} className='cursor-pointer text-green-600' />
+              {/* <BiSolidEdit size={24} className='cursor-pointer text-green-600' /> */}
               <LuTrash2
                 size={24}
                 className='cursor-pointer text-red-600'

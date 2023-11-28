@@ -38,7 +38,7 @@ const GetCoursesOrganism = () => {
         <div>
             <SearchAndDropdownMolecule setCourses={setCourses} />
             <div className="my-8 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row">
-                <FilterCourseMolecule data={optionsData} />
+                {/* <FilterCourseMolecule data={optionsData} /> */}
                 <GetCoursesMolecule courses={courses} />
             </div>
             {/* <Pagination totalRecords={courses.length} currentPage={1} onPageChange={() => {console.log("onPageChange")}} /> */}

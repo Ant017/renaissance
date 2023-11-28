@@ -122,7 +122,7 @@ const AssignmentAtom = () => {
                         }}
                         render={({ field }) => (
                             <input
-                                placeholder="Enter lesson title"
+                                placeholder="Enter Assignment title"
                                 {...field}
                                 className={`w-full px-4 py-2 border rounded ${errors.title ? 'border-red-500' : ''}`}
                             />

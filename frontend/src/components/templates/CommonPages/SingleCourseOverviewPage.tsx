@@ -3,6 +3,7 @@ import NavBarOrganism from '../../organisms/CommonOrganisms/NavBarOrganism';
 import SingleCourseOrganism from '../../organisms/CommonOrganisms/SingleCourseOrganism';
 import Loader from '../../atoms/Loader';
 import CourseOptionOrganism from '../../organisms/CommonOrganisms/CourseOptionOrganism';
+import FooterMolecule from '../../molecules/CommonMolecules/FooterMolecule';
 
 type Props = {};
 
@@ -31,6 +32,7 @@ const SingleCoursePage = (props: Props) => {
                     <CourseOptionOrganism />
                 </div>
             )}
+            <FooterMolecule/>
         </div>
     );
 };

@@ -1,3 +1,5 @@
+// AllCoursesPage.tsx
+
 import React, { useEffect, useState } from 'react';
 import NavBarOrganism from '../../organisms/CommonOrganisms/NavBarOrganism';
 import GetCoursesOrganism from '../../organisms/CommonOrganisms/GetCoursesOrganism';
@@ -18,10 +20,10 @@ const AllCoursesPage = (props: Props) => {
     }, []);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="flex flex-col min-h-screen">
             <NavBarOrganism />
             {loading ? (
-                <div className="flex items-center justify-center h-screen">
+                <div className="flex items-center justify-center flex-grow">
                     <LoaderComponent />
                 </div>
             ) : (

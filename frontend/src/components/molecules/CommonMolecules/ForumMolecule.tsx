@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from 'react';
 import { axiosInstance } from '../../../utils/axiosInstance';
 import { useSelector } from 'react-redux';
@@ -72,7 +73,7 @@ const ForumMolecule = () => {
             'Content-Type': 'application/json',
           },
         });
-        await setForum(response.data.data || []);
+         setForum(response.data.data || []);
       } catch (error) {
         console.error('Error fetching forum questions:', error);
       }
@@ -119,23 +120,37 @@ const ForumMolecule = () => {
     },
   });
   const onSubmit = async (data: FormData) => {
-    const formData = new FormData();
-
-    formData.append('question', data.question ?? '');
-    console.log({ ...data })
-
-    await addQuestion(courseID, data.question ?? '', checkString);
-    setIsModalOpen(false);
+    try {
+      await addQuestion(courseID, data.question ?? '', checkString);
+      // Fetch the updated forum data after posting the question
+      const updatedForum = await axiosInstance.get(`/forum/get-forum/${courseID}`, {
+        headers: {
+          Authorization: `Bearer ${checkString}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      setForum(updatedForum.data.data || []);
+      setIsModalOpen(false);
+    } catch (error) {
+      console.error('Error posting question:', error);
+    }
   };
 
   const onAnswerSubmit = async (data: FormAnswerData) => {
-    const formData = new FormData();
-
-    formData.append('answer', data.answer ?? '');
-    console.log({ ...data })
-
-    await addAnswer(forumID, data.answer ?? '', checkString);
-    setAnswerModalOpen(false);
+    try {
+      await addAnswer(forumID, data.answer ?? '', checkString);
+      // Fetch the updated forum data after posting the answer
+      const updatedForum = await axiosInstance.get(`/forum/get-forum/${courseID}`, {
+        headers: {
+          Authorization: `Bearer ${checkString}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      setForum(updatedForum.data.data || []);
+      setAnswerModalOpen(false);
+    } catch (error) {
+      console.error('Error posting answer:', error);
+    }
   };
 
   return (

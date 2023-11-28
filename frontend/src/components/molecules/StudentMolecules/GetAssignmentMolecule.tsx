@@ -45,10 +45,10 @@ const GetAssignmentMolecule = () => {
 
   return (
     <div>
-      <div className="absolute top-[150px] right-[500px] w-[600px] flex flex-col items-start justify-start p-5">
+      <div className="flex flex-col justify-start p-5">
         <h4 className="text-2xl font-semibold mb-4">Assignment</h4>
         {assignment && (
-          <div className="flex flex-col gap-3 shadow-lg p-9 rounded-lg">
+          <div className="flex flex-col gap-3 shadow-lg p-9 rounded-lg w-[700px]">
             <p className="text-lg font-semibold">{assignment.title}</p>
             <p>Total marks: {assignment.totalMarks}</p>
             <p>Pass marks: {assignment.passMarks}</p>

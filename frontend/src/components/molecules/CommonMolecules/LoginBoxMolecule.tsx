@@ -115,20 +115,11 @@ const LoginBoxMolecule = ({ className }: BoxProps) => {
                     {errors.password && <h5 className="text-red-500">{errors.password.message}</h5>}
                 </div>
 
-                <div className="text-left text-blue-700"><Link to="/forgot-password">Forgot Password?</Link></div>
+                {/* <div className="text-left text-blue-700"><Link to="/forgot-password">Forgot Password?</Link></div> */}
 
-                <div className='text-center flex flex-col justify-center'>
-                    <Button type="submit" value="Log in" additionalStyles="bg-gray-500 hover:bg-gray-700 text-white font-bold w-full mt-4" />
+                <div className='text-center flex flex-col justify-center gap-3'>
+                    <Button type="submit" value="Log in" additionalStyles="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mt-4" />
                     <p className='text-grey-700'>Not Registered? <Link to="/signup" className='text-blue-700'>Sign Up</Link></p>
-                </div>
-
-                <hr />
-
-                <div
-                    className='text-center text-blue-700 cursor-pointer'
-                    onClick={() => navigate("/resend-verification-email")} // Use the navigate function from 'react-router-dom'
-                >
-                    Resend Verification Email?
                 </div>
             </form>
         </div>

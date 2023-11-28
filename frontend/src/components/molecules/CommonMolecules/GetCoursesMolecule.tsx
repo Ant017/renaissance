@@ -73,7 +73,7 @@ const CourseList = ({ courses }: CourseDetails) => {
             return (
                 <div>
                     <div className="container mx-auto my-8 px-10">
-                        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             {courses?.map((course: Course) => (
                                 <div key={course?._id} className="bg-white rounded-lg overflow-hidden shadow-md">
                                     {course.thumbnail && (
@@ -84,16 +84,16 @@ const CourseList = ({ courses }: CourseDetails) => {
                                         />
                                     )}
                                     <div className="p-4">
-                                        <div className='flex justify-between items-center'>
+                                        <div className='flex justify-between items-center cursor-pointer'>
                                             <h3 className="text-xl font-bold mb-2"
                                                 onClick={() => {
                                                     setSingleCourse(course)
                                                     navigate(`/single-course/${course?._id}`, { state: { singleCourse: course } });
                                                 }}>{course?.title}</h3>
-                                            <div className='flex gap-3'>
-                                                <FaCartShopping className="text-2xl cursor-pointer w-5 h-5" />
-                                                <FaHeart className="text-2xl cursor-pointer w-5 h-5" />
-                                            </div>
+                                            {/* <div className='flex gap-3'>
+                                                <FaCartShopping className="text-2xl cursor-pointer w-5 h-5 text-gray-600" />
+                                                <FaHeart className="text-2xl cursor-pointer w-5 h-5 text-gray-600" />
+                                            </div> */}
                                         </div>
 
                                         <p className="text-gray-600 mb-1">{truncateText(course?.description ?? "", 100)}</p>
@@ -138,7 +138,7 @@ const CourseList = ({ courses }: CourseDetails) => {
     return (
         <div>
             <div className="container mx-auto my-8 px-10">
-                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {courses?.map((course: Course) => (
                         <div key={course?._id} className="bg-white rounded-lg overflow-hidden shadow-md">
                             {course.thumbnail && (

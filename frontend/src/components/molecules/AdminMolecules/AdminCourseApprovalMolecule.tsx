@@ -64,7 +64,7 @@ const AdminCourseApprovalMolecule = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold">Teacher Requests</h1>
+      <h1 className="text-3xl font-bold">Course Approval Requests</h1>
       {courseReq.length > 0 ? (
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 justify-start items-start">

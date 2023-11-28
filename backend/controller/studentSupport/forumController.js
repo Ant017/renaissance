@@ -98,10 +98,10 @@ class ForumController {
                     return res.status(400).send(failure("User not found."))
                 }
 
-                const enrolledCourse = student.enrolledCourses.find(course => course._id.toString() === existingForum.courseID.toString());
-                if (!enrolledCourse) {
-                    return res.status(400).send(failure("You are not enrolled in this course."));
-                }
+                // const enrolledCourse = student.enrolledCourses.find(course => course._id.toString() === existingForum.courseID.toString());
+                // if (!enrolledCourse) {
+                //     return res.status(400).send(failure("You are not enrolled in this course."));
+                // }
             }
 
             // if answer is posted by a teacher, check if teacher is the one who created the course
@@ -111,11 +111,11 @@ class ForumController {
                     return res.status(400).send(failure("User not found."))
                 }
 
-                const authorizedCourses = teacher.coursesTaught.map(courseId => courseId.toString());
+                // const authorizedCourses = teacher.coursesTaught.map(courseId => courseId.toString());
 
-                if (!authorizedCourses.includes(existingForum.courseID.toString())) {
-                    return res.status(400).send(failure("You are not authorized to post an answer to this forum."));
-                }
+                // if (!authorizedCourses.includes(existingForum.courseID.toString())) {
+                //     return res.status(400).send(failure("You are not authorized to post an answer to this forum."));
+                // }
 
             }
 

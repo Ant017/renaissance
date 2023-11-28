@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom'
 import { jwtDecode } from "jwt-decode"
 import { useSelector } from "react-redux";
-type BoxProps = {
-    className?: string;
-};
 
 type MyToken = {
     _id: string;
@@ -12,12 +9,12 @@ type MyToken = {
     role: string; // Replace with actual roles
     isVerified: boolean;
     isBanned: boolean;
-    teacherID?: string; // This is optional, as it may not exist for all users
+    teacherID?: string;
     iat: number;
     exp: number;
 }
 
-const LinksNavMolecule = ({ className }: BoxProps) => {
+const LinksNavMolecule = () => {
 
     const state = useSelector((state: any) => state.user);
 
@@ -77,7 +74,7 @@ const LinksNavMolecule = ({ className }: BoxProps) => {
                 <Link className='link' to="/courses">Courses</Link>
             </div>
             <div>
-                <Link className='link' to="/categories">Categories</Link>
+                <Link className='link' to="/about">About</Link>
             </div>
             <div>
                 <Link className='link' to="/contact">Contact</Link>

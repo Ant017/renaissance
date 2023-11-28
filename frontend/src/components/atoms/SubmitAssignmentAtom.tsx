@@ -65,7 +65,7 @@ const SubmitAssignmentAtom = () => {
     };
 
     return (
-        <div className='mt-3 flex flex-col gap-2 items-center border-2 w-[400px] rounded p-3 mx-auto'>
+        <div className='mt-3 flex flex-col gap-2 items-center border-2 w-[700px] rounded p-3 mx-auto'>
             <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-2 justify-center items-center'>
                 <div className='flex items-center gap-2 text-xl'>Upload Assignment
                 </div>

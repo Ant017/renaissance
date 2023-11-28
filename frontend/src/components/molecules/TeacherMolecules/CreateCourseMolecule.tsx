@@ -7,6 +7,7 @@ import { useDropzone } from 'react-dropzone';
 import { useSelector } from 'react-redux';
 import Button from '../../atoms/Button';
 import { useNavigate } from 'react-router-dom';
+import { IoCloudUpload } from "react-icons/io5";
 
 type FormData = {
     title: string;
@@ -116,8 +117,9 @@ const CreateCourseMolecule = () => {
     };
 
     return (
-        <div className="mx-auto mt-8 max-w-md">
-            <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="mx-auto mt-4 w-[800px] shadow-lg p-4">
+            <h1 className="text-3xl font-bold mb-4">Create Course</h1>
+            <form onSubmit={handleSubmit(onSubmit)} className='w-full flex flex-col gap-2'>
                 <div>
                     <label>Title</label>
                     <Controller
@@ -245,22 +247,22 @@ const CreateCourseMolecule = () => {
                             <Dropdown
                                 title="Select Topic"
                                 options={topicOptions}
-                                selectedOption={field.value}  // Use field.value instead of watch('topicName')
-                                onChange={(e) => field.onChange(e.target.value)}  // Use field.onChange to update the form state
+                                selectedOption={field.value}
+                                onChange={(e) => field.onChange(e.target.value)}
                             />
                         )}
                     />
                     {errors.topicName && <h5 className="text-red-500">{String(errors.topicName.message)}</h5>}
                 </div>
 
-                <div>
-                    <label>Thumbnail</label>
-                    <div {...getRootProps()}>
+                <div className='flex flex-col gap-2 items-center justify-center mt-4 border mb-4'>
+                    <label className='font-semibold'>Thumbnail</label>
+                    <div {...getRootProps()}  className='flex items-center justify-center'>
                         <input {...getInputProps()} />
                         {
                             isDragActive ?
                                 <p>Drop the files here ...</p> :
-                                <p>Drag 'n' drop some files here, or click to select files</p>
+                                <IoCloudUpload className='text-gray-500 h-10 w-10 cursor-pointer' />
                         }
                     </div>
                 </div>

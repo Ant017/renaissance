@@ -97,7 +97,7 @@ class AuthController {
             // Create a verification token
             const token = crypto.randomBytes(32).toString('hex');
             authUser.emailVerificationToken = token;
-            authUser.emailVerificationTokenExpired = new Date(Date.now() + 3 * 60 * 1000);
+            authUser.emailVerificationTokenExpired = new Date(Date.now() + 60 * 60 * 1000);
 
             await authUser.save();
 
